@@ -3,7 +3,7 @@
  * each day’s temperature is higher than on the previous day in that sequence.
  *
  * @author Zach Blick
- * @author YOUR NAME HERE
+ * @author Liliana Dhaliwal
  */
 
 public class WeatherPatterns {
@@ -15,17 +15,22 @@ public class WeatherPatterns {
      * @return the longest run of days with increasing temperatures
      */
     public static int longestWarmingTrend(int[] temperatures) {
-        // TODO: Write your code here!
-        int count = 1;
-        int longestCount = 1;
+
+        int count = 0;
+        int longestCount = 0;
+        int lastTemp;
+        int lastTempIndex;
 
         for (int i = 0; i < temperatures.length; i++){
-            int lastTemp = temperatures[i];
+            lastTemp = temperatures[i];
+            lastTempIndex = i;
+
             count = 1;
             for (int j = 0; j < temperatures.length; j++){
-                if (temperatures[j] > lastTemp){
+                if (temperatures[j] > lastTemp && lastTempIndex < j){
                     count++;
                     lastTemp = temperatures[j];
+                    lastTempIndex = j;
                 }
             }
             if (count > longestCount){
@@ -34,4 +39,10 @@ public class WeatherPatterns {
         }
         return longestCount;
     }
+
+    // Have another recursive method
+    // Start from the back of the tempuratures and move backwards'
+
+
+
 }

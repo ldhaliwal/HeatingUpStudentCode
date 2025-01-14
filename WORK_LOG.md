@@ -1,9 +1,9 @@
-Name: YOUR NAME HERE
+Name: Liliana Dhaliwal
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date       |    Time     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Update |
+|:-----------|:-----------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| January 13 |  2:30-3pm   | Started brainstorming, wrote a very simple nested for loop idea that actually passed 3/5 test cases, but i think i know why it failed the other ones. then I spent a good amount of time talking with everyone else about some ideas, we agreed that some sort of recursive search might work best, and then we thought of some ways to reduce runtime that involved going through the temperatures backwards and doing a sort of path compression thing, but we didn't totally understand what we were talking about or how to implement it. |
+| January 14 | 9:15-9:30am |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    did a quick fiz that got us up to 4/5 test cases working.  |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
