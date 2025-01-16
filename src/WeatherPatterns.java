@@ -7,42 +7,41 @@
  */
 
 public class WeatherPatterns {
-
-
     /**
      * Longest Warming Trend
      * @param temperatures
      * @return the longest run of days with increasing temperatures
      */
     public static int longestWarmingTrend(int[] temperatures) {
-
-        int count = 0;
+        int count;
         int longestCount = 0;
         int lastTemp;
-        int lastTempIndex;
 
-        for (int i = 0; i < temperatures.length; i++){
+        // Stores the longest run up to that index, corresponding to temp at that same index in temperatures
+        int[] longestRun = new int[temperatures.length];
+
+        // Iterates through all the temperatures
+        for (int i = 0; i < temperatures.length; i++) {
             lastTemp = temperatures[i];
-            lastTempIndex = i;
 
-            count = 1;
-            for (int j = 0; j < temperatures.length; j++){
-                if (temperatures[j] > lastTemp && lastTempIndex < j){
-                    count++;
-                    lastTemp = temperatures[j];
-                    lastTempIndex = j;
+            count = 0;
+
+            // Looks at every count up to that point
+            for (int j = 0; j <= i; j++) {
+                if (temperatures[j] < lastTemp && longestRun[j] > count) {
+                    count = longestRun[j];
                 }
             }
-            if (count > longestCount){
-                longestCount = count;
+
+            // Set the longest run value at the current index
+            longestRun[i] = count + 1;
+
+            // Update longest count
+            if (longestRun[i] > longestCount) {
+                longestCount = longestRun[i];
             }
         }
+        // Returns the longest run
         return longestCount;
     }
-
-    // Have another recursive method
-    // Start from the back of the tempuratures and move backwards'
-
-
-
 }
